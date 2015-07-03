@@ -1,0 +1,118 @@
+﻿已經開始建置於 2015/6/27 上午 05:59:00。
+     1>節點 2 (rebuild 目標) 上的專案 "C:\LKM\小雞雞耕銘\RtvFileConvert.vcxproj"。
+     1>_PrepareForClean:
+         正在刪除檔案 "Debug\LuoLitaArm_cw_v4.lastbuildstate"。
+       InitializeBuildStatus:
+         正在變更時間戳記 "Debug\LuoLitaArm_cw_v4.unsuccessfulbuild"。
+       ClCompile:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\IntervalZero\RTX\\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ControlLita.cpp gripper_2.cpp IMPCard.cpp LuoLitaArm.cpp LuoLitaArmFunc.cpp RobotLita.cpp SerialPortCom.cpp
+         SerialPortCom.cpp
+         RobotLita.cpp
+         LuoLitaArmFunc.cpp
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(461): warning C4244: '=' : 將 'long' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(462): warning C4244: '=' : 將 'long' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(463): warning C4244: '=' : 將 'long' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(464): warning C4244: '=' : 將 'long' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(654): warning C4101: 'qz' : 未參考的區域變數
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(834): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(844): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(854): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(864): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(874): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarmfunc.cpp(884): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+         LuoLitaArm.cpp
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(53): warning C4244: '正在初始化' : 將 'double' 轉換為 'int'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(54): warning C4244: '正在初始化' : 將 'double' 轉換為 'int'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(55): warning C4244: '正在初始化' : 將 'double' 轉換為 'int'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(221): warning C4244: '引數' : 將 'int' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(223): warning C4244: '引數' : 將 'int' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(297): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(298): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(299): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(305): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(306): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(307): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(447): warning C4305: '引數' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(491): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(492): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(493): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(499): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(500): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(501): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(530): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(534): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(535): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(536): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(539): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(554): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(564): warning C4305: '正在初始化' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(630): warning C4244: '正在初始化' : 將 'double' 轉換為 'int'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(658): warning C4305: '正在初始化' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(752): warning C4305: '正在初始化' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(821): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\luolitaarm.cpp(822): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+         IMPCard.cpp
+         gripper_2.cpp
+     1>c:\lkm\小雞雞耕銘\gripper_2.cpp(31): warning C4101: 'add1' : 未參考的區域變數
+     1>c:\lkm\小雞雞耕銘\gripper_2.cpp(31): warning C4101: 'add2' : 未參考的區域變數
+     1>c:\lkm\小雞雞耕銘\gripper_2.cpp(56): warning C4101: 'index' : 未參考的區域變數
+     1>c:\lkm\小雞雞耕銘\gripper_2.cpp(89): warning C4101: 'nErr' : 未參考的區域變數
+         ControlLita.cpp
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(471): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(472): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(473): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(474): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(475): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(476): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(477): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(479): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(480): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(481): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(482): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(483): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(484): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(485): warning C4305: '=' : 從 'double' 轉換為 'float'，是由較大的型別轉換為較小的型別，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(1452): warning C4101: 'rs_p' : 未參考的區域變數
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(2455): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(2465): warning C4244: '引數' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(2465): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(2474): warning C4244: '引數' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(2474): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(2554): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+     1>c:\lkm\小雞雞耕銘\controllita.cpp(2561): warning C4244: '=' : 將 'double' 轉換為 'float'，由於型別不同，可能導致資料遺失
+         正在產生程式碼...
+     1>c:\lkm\小雞雞耕銘\gripper_2.cpp(51): warning C4715: 'init_gripper_para' : 不是所有控制路徑都傳回值
+     1>c:\lkm\小雞雞耕銘\robotlita.cpp(432): warning C4700: 使用了未初始化的區域變數 'L3'
+       ManifestResourceCompile:
+         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\LuoLitaArm_cw_v4.exe.embed.manifest.res" Debug\LuoLitaArm_cw_v4_manifest.rc 
+       Link:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\LKM\小雞雞耕銘\Debug\LuoLitaArm_cw_v4.exe" /INCREMENTAL /NOLOGO IMCDriver.lib rtapi_w32.lib TcAdsDll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc /NODEFAULTLIB:libcd /NODEFAULTLIB:libcmt /NODEFAULTLIB:libcmtd /MANIFEST /ManifestFile:"Debug\LuoLitaArm_cw_v4.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\LKM\小雞雞耕銘\Debug\LuoLitaArm_cw_v4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"C:\LKM\小雞雞耕銘\Debug\LuoLitaArm_cw_v4.lib" /MACHINE:X86 Debug\LuoLitaArm_cw_v4.exe.embed.manifest.res
+         Debug\ControlLita.obj
+         Debug\gripper_2.obj
+         Debug\IMPCard.obj
+         Debug\LuoLitaArm.obj
+         Debug\LuoLitaArmFunc.obj
+         Debug\RobotLita.obj
+         Debug\SerialPortCom.obj
+       Manifest:
+         正在刪除檔案 "Debug\LuoLitaArm_cw_v4.exe.embed.manifest"。
+         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\LuoLitaArm_cw_v4.exe.embed.manifest" /manifest Debug\LuoLitaArm_cw_v4.exe.intermediate.manifest
+         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\LuoLitaArm_cw_v4.exe.embed.manifest.res" Debug\LuoLitaArm_cw_v4_manifest.rc 
+       LinkEmbedManifest:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\LKM\小雞雞耕銘\Debug\LuoLitaArm_cw_v4.exe" /INCREMENTAL /NOLOGO IMCDriver.lib rtapi_w32.lib TcAdsDll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc /NODEFAULTLIB:libcd /NODEFAULTLIB:libcmt /NODEFAULTLIB:libcmtd /MANIFEST /ManifestFile:"Debug\LuoLitaArm_cw_v4.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\LKM\小雞雞耕銘\Debug\LuoLitaArm_cw_v4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"C:\LKM\小雞雞耕銘\Debug\LuoLitaArm_cw_v4.lib" /MACHINE:X86 Debug\LuoLitaArm_cw_v4.exe.embed.manifest.res
+         Debug\ControlLita.obj
+         Debug\gripper_2.obj
+         Debug\IMPCard.obj
+         Debug\LuoLitaArm.obj
+         Debug\LuoLitaArmFunc.obj
+         Debug\RobotLita.obj
+         Debug\SerialPortCom.obj
+         RtvFileConvert.vcxproj -> C:\LKM\小雞雞耕銘\Debug\LuoLitaArm_cw_v4.exe
+       FinalizeBuildStatus:
+         正在刪除檔案 "Debug\LuoLitaArm_cw_v4.unsuccessfulbuild"。
+         正在變更時間戳記 "Debug\LuoLitaArm_cw_v4.lastbuildstate"。
+     1>專案 "C:\LKM\小雞雞耕銘\RtvFileConvert.vcxproj" (rebuild 目標) 建置完成。
+
+建置成功。
+
+經過時間 00:00:12.09
