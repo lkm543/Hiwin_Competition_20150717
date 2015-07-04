@@ -50,12 +50,14 @@ int main( int argc, char **argv, char **envp)
 	int Value_Postion_Gripper_Close=255; //0-255
 	int Value_Postion_Gripper_Force=80; //0-255
 	int Value_Gripper_Speed=200; //0-255
-	int Value_Arm_Speed=1.0; //0-1.2 , float
-	int Value_Arm_Speed_Aim=0.3; //0-1.2 , float ,moving on 'j' mode
-	int Value_Height_While_Moving=0.8;
+	float Value_Arm_Speed=1.0; //0-1.2 , float
+	float Value_Arm_Speed_Aim=0.3; //0-1.2 , float ,moving on 'j' mode
+	float Value_Height_While_Moving=0.2;
+	float Value_Griper_Depth=-0.16;
 	double x_offset=0;
 	double y_offset=0;
 	double z_offset=0;
+	float pregrab_h=0.08;
 
 	//For Gripper
 	init_gripper_para(); //unknown
@@ -141,11 +143,9 @@ while(1)
 					printf("Input commend and press enter:\n");
 					printf("[1] Set desk calibration Position\n");
 					printf("[2] Run desk calibration\n");
-					printf("[2] Teach and save it into txt\n");
-					printf("[3] Load one path by txt\n");
-					printf("[4] Load multiple path by txt\n");
-                    printf("[5] Relative position\n");
-					printf("[6] Move mode\n");
+					printf("[3] Run 6-Point Calibration\n\n");
+					printf("[4] Run Domino Calibration");
+					printf("[5] Run");
 					printf("[z] Go to initial pose\n");
 					printf("[,] open gripper\n");
 					printf("[.] close gripper\n");
@@ -233,48 +233,6 @@ while(1)
 				fout << first_target << endl;
 				fout.close(); 
 			break;
-				/*
-				block=true;
-				while (block)
-				{
-					if ( _kbhit() )
-                    {
-                        kbCmd = _getche();
-						
-                        switch(kbCmd)
-                        {
-							case ',':
-							{
-								//finger.move(80);
-								setReqPos(80);
-								break;
-							}
-							case '.':
-							{
-								//finger.move(120);
-								setReqPos(255);
-								break;
-							}
-							case 13://Enter
-							{
-								kbCmd = 'j';
-								keyboard_cw();
-								block=false;
-								break;
-							}
-							
-							default:
-							{
-								char kb_tmp = kbCmd;
-								kbCmd = 'j';
-								keyboard_cw();
-								kbCmd = kb_tmp;
-								keyboard_cw();
-							}
-						}
-					} 
-				} // while end
-			break;*/
 			}
 			case '2':
 			{
@@ -297,7 +255,7 @@ while(1)
 				first_block(0,3)=first_block(0,3)+x_offset;
 				first_block(1,3)=first_block(1,3)+y_offset;
 				first_block(2,3)=first_block(2,3)+z_offset;
-				//cout <<first_block<<endl; 
+				cout <<first_block<<endl; 
 				for (int i=0;i<=3;i++)
 				{
 					fin2 >> first_target(i,0) >> first_target(i,1) >> first_target(i,2) >>first_target(i,3);
@@ -316,78 +274,13 @@ while(1)
 				Move_L_Abs( first_target ,0.0f);
 				while(MOVL) {}
 				Sleep(1000);
-				/*
-				block=true;
-				bool first=false;
-				bool second=false;
-				while (block)
-				{
-					if ( _kbhit() )
-                    {
-                        kbCmd = _getche();
-                        switch(kbCmd)
-                        {
-
-							case 13://Enter
-							{
-								if (first==false)
-								{
-									kbCmd = 'j';
-									keyboard_cw();
-									first_corner.block(0,0,3,3)=R07Cmd;
-									first_corner.block(0,3,3,1)=P07Cmd;
-									printf("press [enter] to save second corner\n");
-									first=true;
-								}
-								else if (second==false)
-								{
-									kbCmd = 'j';
-									keyboard_cw();
-									second_corner.block(0,0,3,3)=R07Cmd;
-									second_corner.block(0,3,3,1)=P07Cmd;
-									second=true;
-									block=false;
-								}
-	
-								break;
-							}
-							default:
-							{
-								char kb_tmp = kbCmd;
-								kbCmd = 'j';
-								keyboard_cw();
-								kbCmd = kb_tmp;
-								keyboard_cw();
-							}
-						}
-					}
-				}
-				
-				cout<<first_corner<<endl;
-				cout<<"---------------"<<endl;
-				cout<<second_corner<<endl;
-				//if
-				double theta=-atan2((second_corner(0,3)-first_corner(0,3)),(second_corner(1,3)-first_corner(1,3)));
-				desk_transform(0,0)=cos(theta);
-				desk_transform(0,1)=-sin(theta);
-				desk_transform(1,0)=sin(theta);
-				desk_transform(1,1)=cos(theta);
-				cout<<desk_transform<<endl;
-				cout<<theta<<endl;
-				ofstream fout("calibration.txt"); 
-				    if(!fout) { 
-				        cout << "無法寫入檔案\\n"; 
-				    }
-				fout << desk_transform<< endl;
-				fout.close(); 
-				//Sleep(3000);
-				*/
 			break;
 			
 			}
 			case '3':  //teach
 			{
-				printf("teach mode\n");
+				printf("Run 6-Point Calibration\n");
+				/*
 				char file[10];
 				printf("save to :\n");
 				std::cin>>file;
@@ -458,20 +351,12 @@ while(1)
 				fout << first_block << endl;
 				fout << first_target << endl;
 				fout.close(); 
+				*/
 			break;
 			}
 			case '4': //read
 			{
 				
-				//ifstream fin1("calibration.txt"); 
-				//if(!fin1) { 
-				//	cout << "無法讀入檔案\\n"; 
-				//} 
-				//for (int i=0;i<=1;i++)
-				//{
-				//	fin1 >> desk_transform(i,0) >> desk_transform(i,1);
-				//}
-				//cout<<desk_transform<<endl;
 				ifstream fin0("offset.txt");
 				double x_offset=0,y_offset=0,z_offset=0 ;
 				fin0>>x_offset >> y_offset >> z_offset;
@@ -505,68 +390,164 @@ while(1)
 			}
 			
 			case '5'://play
-			{
-				int loop = 216;
+			{				
+				ifstream fin0("offset.txt");
+				fin0>>x_offset >> y_offset >> z_offset;
+				cout<<"x offset:"<<x_offset<<"  y offset:" << y_offset <<"   z offset:" << z_offset<<endl;
+				printf("read file : path.txt\n");
+
+				float theta;
+
+				ifstream fin2("path.txt");
+
 				
-				//ifstream fin0("offset.txt");
-				//double x_offset=0,y_offset=0,z_offset=0 ;
-				//fin0>>x_offset >> y_offset >> z_offset;
-				//cout<<"x offset:"<<x_offset<<"  y offset:" << y_offset <<"   z offset:" << z_offset<<endl;
-				
-				for (int i=201;i<loop;i++)
-				{
-					//read file
-					char file[10];
-					printf("read file : \n");
-					sprintf(file, "%d.txt", i);
-					ifstream fin2(file);
-					if(!fin2) { 
-						cout << "無法讀入檔案"<<file<<"\\n"; 
-					} 
-					for (int i=0;i<=1;i++)
-					{
-						fin2 >> first_block(i,3);
-					}
-					first_block(0,0)=0.06;
-					first_block(0,1)=-1.0;
+				if(!fin2) { 
+						cout << "無法讀入檔案 path.txt"<<endl; 
+				}
+
+				for (int i=0;i<7;i++)
+				{	
+					first_block(0,0)=-1.0;
+					first_block(0,1)=0.0;
 					first_block(0,2)=0.0;
-					first_block(1,0)=-1.0;
-					first_block(1,1)=-0.06;
-					first_block(1,2)=0.0074;
-					first_block(2,0)=-0.0074;
+					first_block(0,3)=0.0;
+					first_block(1,0)=0.0;
+					first_block(1,1)=1.0;
+					first_block(1,2)=0.0;
+					first_block(1,3)=0.0;
+					first_block(2,0)=-0.0;
 					first_block(2,1)=0.0;
 					first_block(2,2)=-1.0;
-					first_block(2,3)=-0.15;
+					first_block(2,3)=Value_Griper_Depth;
 					first_block(3,0)=0.0;
 					first_block(3,1)=0.0;
 					first_block(3,2)=0.0;
 					first_block(3,3)=1.0;
-					//>> first_block(i,1) >> first_block(i,2) >>
-					//first_block(0,3)=first_block(0,3)+x_offset;
-					//first_block(1,3)=first_block(1,3)+y_offset;
-					//first_block(2,3)=first_block(2,3)+z_offset;
-					cout <<first_block<<endl; 
-					for (int i=0;i<=3;i++)
+
+					first_target(0,0)=-1.0;
+					first_target(0,1)=0.0;
+					first_target(0,2)=0.0;
+					first_target(0,3)=0.0;
+					first_target(1,0)=0.0;
+					first_target(1,1)=1.0;
+					first_target(1,2)=0.0;
+					first_target(1,3)=0.0;
+					first_target(2,0)=-0.0;
+					first_target(2,1)=0.0;
+					first_target(2,2)=-1.0;
+					first_target(2,3)=Value_Griper_Depth;
+					first_target(3,0)=0.0;
+					first_target(3,1)=0.0;
+					first_target(3,2)=0.0;
+					first_target(3,3)=1.0;
+
+					for (int i=0;i<=1;i++)
 					{
-						fin2 >> first_target(i,0) >> first_target(i,1) >> first_target(i,2) >>first_target(i,3);
+						fin2 >> first_block(i,3);
+					}
+
+					fin2 >> theta;
+					theta=theta*M_PI/180;
+					first_block(0,0)	=	-cos(theta);
+					first_block(0,1)	=	sin(theta);
+					first_block(1,0)	=	sin(theta);
+					first_block(1,1)	=	cos(theta);
+					//Offset
+					first_block(0,3)=first_block(0,3)+x_offset;
+					first_block(1,3)=first_block(1,3)+y_offset;
+					first_block(2,3)=first_block(2,3)+z_offset;
+					cout <<first_block<<endl;
+
+					for (int i=0;i<=1;i++)
+					{
+						fin2 >> first_target(i,3);
 					}
 					
-					first_target(2,3)=-0.15;
-					//first_target(0,3)=first_target(0,3)+x_offset;
-					//first_target(1,3)=first_target(1,3)+y_offset;
-					//first_target(2,3)=first_target(2,3)+z_offset;
-					//cout <<fin2<<endl;
+					fin2 >> theta;
+					theta=theta*M_PI/180;
+					first_target(0,0)	=	-cos(theta);
+					first_target(0,1)	=	sin(theta);
+					first_target(1,0)	=	sin(theta);
+					first_target(1,1)	=	cos(theta);
+
+					first_target(0,3)=first_target(0,3)+x_offset;
+					first_target(1,3)=first_target(1,3)+y_offset;
+					first_target(2,3)=first_target(2,3)+z_offset;
+
 					cout <<first_target<<endl;
-					Sleep(2000);
+					//Sleep(2000);
 
 					kbCmd = 'j';
-				keyboard_cw();
-				float pregrab_h=0.08;
+					keyboard_cw();
+				
+					first_block_temp=first_block;
+					first_target_temp=first_target;
+					
+					setReqPos(Value_Gripper_Open);
+					//Sleep(1000);
+					
+					if (P07Cmd(2,0)>first_block_temp(2,3)+pregrab_h) //如果現在高度>目標高度，則保持高度移動到目標點
+					{
+						first_block_temp(2,3)=P07Cmd(2,0);
+					}
+					else //否則，移動到目標上方稍微高一點的位置
+					{
+						first_block_temp(2,3)=first_block_temp(2,3)+pregrab_h;
+					}
+					//cout<<"first_block_temp: "<<first_block_temp(0,3)<<",  "<<first_block_temp(1,3)<<",  "<<first_block_temp(2,3)<<endl;
+					//system("pause");
+					Move_L_Abs( first_block_temp ,0.0f);
+					while(MOVL) {}
+					first_block_temp(2,3)=first_block(2,3);//下去
+					Move_L_Abs( first_block_temp ,0.0f);
+					while(MOVL) {}
+					setReqPos(Value_Postion_Gripper_Close);
+					Sleep(500);
+					first_block_temp(2,3)=first_target_temp(2,3)+pregrab_h; //抬高到target高度再高一點
+					Move_L_Abs( first_block_temp ,0.0f);
+					while(MOVL) {}
 
-				first_block_temp=first_block;
-				first_target_temp=first_target;
-				setReqPos(150);
-				Sleep(1000);
+					first_target_temp(2,3)=first_target_temp(2,3)+pregrab_h; //移動到target位置
+					Move_L_Abs( first_target_temp ,0.0f);
+					while(MOVL) {}
+					first_target_temp(2,3)=first_target(2,3); //往下
+					Move_L_Abs( first_target_temp ,0.0f);
+					while(MOVL) {}
+					setReqPos(Value_Gripper_Open);
+					Sleep(500);
+					first_target_temp(2,3)=first_target_temp(2,3)+pregrab_h; //稍微往上
+					Move_L_Abs( first_target_temp ,0.0f);
+					while(MOVL) {}
+				}
+				// 推骨牌
+				cout <<"Finish placing the domino"<<endl;
+				for (int i=0;i<=1;i++)
+					{
+						fin2 >> first_target(i,3);
+					}
+					
+				fin2 >> theta;
+				theta=theta*M_PI/180;
+				first_target(0,0)	=	-cos(theta);
+				first_target(0,1)	=	sin(theta);
+				first_target(1,0)	=	sin(theta);
+				first_target(1,1)	=	cos(theta);
+					
+				first_target(0,3)=first_target(0,3)+x_offset;
+				first_target(1,3)=first_target(1,3)+y_offset;
+				first_target(2,3)=first_target(2,3)+z_offset;
+
+				cout <<first_target<<endl;
+				//Sleep(2000);
+
+				kbCmd = 'j';
+				keyboard_cw();
+				
+				first_block_temp=first_target;
+					
+				setReqPos(Value_Postion_Gripper_Close);
+				//Sleep(500);
+					
 				if (P07Cmd(2,0)>first_block_temp(2,3)+pregrab_h) //如果現在高度>目標高度，則保持高度移動到目標點
 				{
 					first_block_temp(2,3)=P07Cmd(2,0);
@@ -579,76 +560,33 @@ while(1)
 				//system("pause");
 				Move_L_Abs( first_block_temp ,0.0f);
 				while(MOVL) {}
-				first_block_temp(2,3)=first_block(2,3);//下去
+				first_block_temp(2,3)=first_target(2,3);//下去
 				Move_L_Abs( first_block_temp ,0.0f);
 				while(MOVL) {}
-				//finger.move(120);//夾
-				setReqPos(255);
-				Sleep(1000);
-				first_block_temp(2,3)=first_target_temp(2,3)+pregrab_h; //抬高到target高度再高一點
-				Move_L_Abs( first_block_temp ,0.0f);
+				
+				cout <<"Push the domino"<<endl;
+
+				for (int i=0;i<=1;i++)
+					{
+						fin2 >> first_target(i,3);
+					}
+					
+				fin2 >> theta;
+				theta=theta*M_PI/180;
+				first_target(0,0)	=	-cos(theta);
+				first_target(0,1)	=	sin(theta);
+				first_target(1,0)	=	sin(theta);
+				first_target(1,1)	=	cos(theta);
+					
+				first_target(0,3)=first_target(0,3)+x_offset;
+				first_target(1,3)=first_target(1,3)+y_offset;
+				first_target(2,3)=first_target(2,3)+z_offset;
+
+				cout <<first_target<<endl;
+				//Sleep(2000);
+				Move_L_Abs( first_target ,0.0f);
 				while(MOVL) {}
 
-				first_target_temp(2,3)=first_target_temp(2,3)+pregrab_h; //移動到target位置
-				Move_L_Abs( first_target_temp ,0.0f);
-				while(MOVL) {}
-				first_target_temp(2,3)=first_target(2,3); //往下
-				Move_L_Abs( first_target_temp ,0.0f);
-				while(MOVL) {}
-				//finger.move(80);//放開
-				setReqPos(150);
-				Sleep(1000);
-				first_target_temp(2,3)=first_target_temp(2,3)+pregrab_h; //稍微往上
-				Move_L_Abs( first_target_temp ,0.0f);
-				while(MOVL) {}
-
-				}
-
-				ifstream fin2("216.txt");
-				if(!fin2) { 
-					cout << "無法讀入檔案\\n"; 
-				} 
-				for (int i=0;i<=3;i++)
-				{
-					fin2 >> first_block(i,0) >> first_block(i,1) >> first_block(i,2) >>first_block(i,3);
-				}
-				//first_block(0,3)=first_block(0,3)+x_offset;
-				//first_block(1,3)=first_block(1,3)+y_offset;
-				//first_block(2,3)=first_block(2,3)+z_offset;
-				cout <<first_block<<endl; 
-				for (int i=0;i<=3;i++)
-				{
-					fin2 >> first_target(i,0) >> first_target(i,1) >> first_target(i,2) >>first_target(i,3);
-				}
-				//first_target(0,3)=first_target(0,3)+x_offset;
-				//first_target(1,3)=first_target(1,3)+y_offset;
-				//first_target(2,3)=first_target(2,3)+z_offset;
-
-				kbCmd = 'j';
-				keyboard_cw();
-				//float pregrab_h=0.1;
-				int pregrab_h=0.08;
-				first_block_temp=first_block;
-				first_target_temp=first_target;
-				setReqPos(255);
-				Sleep(1000);
-				if (P07Cmd(2,0)>first_block_temp(2,3)+pregrab_h) //如果現在高度>目標高度，則保持高度移動到目標點
-				{
-					first_block_temp(2,3)=P07Cmd(2,0);
-				}
-				else //否則，移動到目標上方稍微高一點的位置
-				{
-					first_block_temp(2,3)=first_block_temp(2,3)+pregrab_h;
-				}
-				Move_L_Abs( first_block_temp ,0.0f);
-				while(MOVL) {}
-				first_block_temp(2,3)=first_block(2,3);//下去
-				Move_L_Abs( first_block_temp ,0.0f);
-				while(MOVL) {}
-
-				first_target_temp(2,3)=first_target_temp(2,3); 
-				Move_L_Abs( first_target_temp ,0.0f);
-				while(MOVL) {}
 			break;
 			}
 			case '6':
